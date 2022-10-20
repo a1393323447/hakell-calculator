@@ -37,7 +37,7 @@ eval (Una op opend) = do
     Just (unaOper op opend)
 
 -- Token
-data Token =  Operator BinOp |
+data Token =  Operator BinOp    |
               Number String     |
               OpenParens        |
               CloseParens
@@ -49,7 +49,7 @@ data LexerState = Start          |
                   deriving (Show)
 
 isOper :: Char -> Bool
-isOper c = c `elem` ['+', '-', '*', '/', '%']
+isOper c = c `elem` ['+', '-', '*', '/']
 
 getOper :: Char -> Maybe BinOp
 getOper c = case c of
